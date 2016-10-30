@@ -38,5 +38,11 @@ public class Main
     println ("  all donations: ");
     println ("--------------------");
     println(gson.toJson(donations));
+    
+    
+    Donation donation = new Donation(5000, "paypal");
+    service.createDonation(candidates.get(0), donation);
+    donations = service.getAllDonations();
+    println(gson.toJson(donations));
   }
 }
