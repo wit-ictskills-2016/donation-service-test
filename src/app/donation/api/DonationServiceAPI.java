@@ -8,6 +8,7 @@ import com.google.gson.GsonBuilder;
 import app.donation.model.Candidate;
 import app.donation.model.User;
 import app.donation.model.Donation;
+import app.donation.model.DonationComplete;
 import retrofit2.Call;
 import retrofit2.Response;
 import retrofit2.Retrofit;
@@ -51,6 +52,13 @@ public class DonationServiceAPI
     return donations.body();
   }
 
+  public List<DonationComplete> getAllCompleteDonations() throws Exception
+  {
+    Call<List<DonationComplete>> call = (Call<List<DonationComplete>>) service.getAllCompleteDonations();
+    Response<List<DonationComplete>> donations = call.execute();
+    return donations.body();
+  }
+  
   public User createUser(User newUser) throws Exception
   {
     Call<User> call = (Call<User>) service.createUser(newUser);

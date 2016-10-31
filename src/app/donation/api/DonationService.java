@@ -3,6 +3,7 @@ package app.donation.api;
 import java.util.List;
 import app.donation.model.Candidate;
 import app.donation.model.Donation;
+import app.donation.model.DonationComplete;
 import app.donation.model.User;
 import retrofit2.Call;
 import retrofit2.http.Body;
@@ -24,6 +25,9 @@ public interface DonationService
   @GET("/api/donations")
   Call<List<Donation>> getAllDonations();
 
+  @GET("/api/donations")
+  Call<List<DonationComplete>> getAllCompleteDonations();  
+  
   @GET("/api/candidates")
   Call<List<Candidate>> getAllCandidates();
 
